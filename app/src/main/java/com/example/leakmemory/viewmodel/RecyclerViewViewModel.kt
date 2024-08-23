@@ -1,17 +1,20 @@
-package com.example.leakmemory
+package com.example.leakmemory.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.leakmemory.R
+import com.example.leakmemory.model.MyData
+import com.example.leakmemory.view.MainActivity
 
 class RecyclerViewViewModel : ViewModel() {
     val liveDataOfList = MutableLiveData<List<MyData>>()
 
     companion object {
-        var staticActivityReference: MainActivity? = null // Tham chiếu tĩnh tới Activity
+        var staticActivityReference: MainActivity? = null // Static reference to Activity
     }
 
     fun setActivity(activity: MainActivity) {
-        staticActivityReference = activity // Giữ tham chiếu tĩnh
+        staticActivityReference = activity // Hold static reference
     }
 
     fun loadMoreData() {

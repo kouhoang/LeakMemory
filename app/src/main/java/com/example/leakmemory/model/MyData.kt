@@ -1,4 +1,4 @@
-package com.example.leakmemory
+package com.example.leakmemory.model
 
 data class MyData(
     val imageResId: Int,

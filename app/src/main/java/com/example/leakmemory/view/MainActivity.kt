@@ -1,10 +1,13 @@
-package com.example.leakmemory
+package com.example.leakmemory.view
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.leakmemory.R
+import com.example.leakmemory.adapter.MyAdapter
+import com.example.leakmemory.viewmodel.RecyclerViewViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -27,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Cố ý tạo rò rỉ bộ nhớ bằng cách giữ tham chiếu tĩnh tới Activity
+        // Intentionally create a memory leak by keeping a static reference to the Activity
         viewModel.setActivity(this)
 
         viewModel.loadMoreData()

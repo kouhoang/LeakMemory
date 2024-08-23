@@ -1,4 +1,4 @@
-package com.example.leakmemory
+package com.example.leakmemory.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,10 +8,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.leakmemory.R
+import com.example.leakmemory.model.MyData
 
 class MyAdapter(
     private var data: List<MyData>,
-    private val context: Context, // Giữ tham chiếu tới Context sẽ gây ra memory leak
+    private val context: Context, // Keeping a reference to the Context will cause a memory leak
 ) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
     inner class MyViewHolder(
         itemView: View,
